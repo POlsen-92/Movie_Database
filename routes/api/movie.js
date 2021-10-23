@@ -38,7 +38,7 @@ router.post('/', (req,res) => {
 })
 
 router.put('/:id',(req,res)=>{
-    const query='UPDATE movies SET movie_name= ? WHERE id=?';
+    const query="UPDATE movie SET movie_name=(?) WHERE id=?";
 
     db.query(query,[req.body.name ,req.params.id], (err,data)=>{
         if (err) {
